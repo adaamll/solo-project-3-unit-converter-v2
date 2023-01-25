@@ -65,6 +65,10 @@ p {
   color: #fff;
 }
 
+#value-input::-webkit-inner-spin-button {
+  display: none;
+}
+
 #value-input::placeholder {
   color: #fff;
 }
