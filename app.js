@@ -13,6 +13,7 @@ let gallons = 0;
 let kilograms = 0;
 let pounds = 0;
 
+// FUNCTION TO CONVERT UNITS FROM INPUT
 function convertInput(input) {
   meters = (input / 3.281).toFixed(3);
   feet = (input * 3.281).toFixed(3);
@@ -22,14 +23,19 @@ function convertInput(input) {
   pounds = (input * 2.204).toFixed(3);
 }
 
-function convertAll() {
+// FUNCTION TO UPDATE UI AFTER CONVERTING UNITS
+function updateUI() {
   convertInput(inputEl.value);
+
   lengthText.textContent = `${inputEl.value} meters = ${feet} feet | ${inputEl.value} feet = ${meters} meters`;
+
   volumeText.textContent = `${inputEl.value} liters = ${gallons} gallons | ${inputEl.value} gallons = ${liters} liters`;
+
   massText.textContent = `${inputEl.value} kilos = ${pounds} pounds | ${inputEl.value} pounds = ${kilograms} kilograms`;
+
   inputEl.value = '';
 }
 
 // inputEl.addEventListener('input', convertAll);
 
-btnEl.addEventListener('click', convertAll);
+btnEl.addEventListener('click', updateUI);
